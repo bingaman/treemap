@@ -45,9 +45,14 @@
       zoom: 10
     });
     
-    var Draw = new MapboxDraw();
+    var Draw = new MapboxDraw({
+      displayControlsDefault: false,
+      controls: {
+        point: true,
+        trash: true
+      }
+    });
     map.addControl(Draw, 'top-left');
-
   </script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
