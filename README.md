@@ -2,7 +2,7 @@
 
 # tools for mapping changes Chicago's tree canopy
 
-[This tool](https://bingaman.github.io/treemap/chicago.html) shows Chicago's canopy and will hopefully help to map where trees have been removed and replacement trees have not yet been requested or planted.
+[This tool](https://bingaman.github.io/treemap/chicago.html) shows Chicago's canopy and will hopefully help map where trees have been removed and replacement trees have not yet been requested or planted.
 
 Chicago today has approximately 17.5% tree canopy cover. [The city has a stated goal of 20% canopy cover by 2020](https://twitter.com/bingaman/status/935932589067722754). 17.5% canopy is much lower than many comparable cities. And yet, Chicago has the most to gain from an increased tree canopy. We know that [climate change will increase average temperatures and well as make extreme weather events more common](https://www.cityofchicago.org/content/dam/city/progs/env/ChicagoGreenStormwaterInfrastructureStrategy.pdf). Trees lower the ambient temperature by providing shade, clean the air and absorb water, prevent flooding and providing habitat. [Areas with increased tree cover are significantly cooler](http://pubs.sciepub.com/jap/4/1/3/index.html). Hundreds of people [have already died during heatwaves in Chicago](http://www.chicagomag.com/Chicago-Magazine/July-2015/1995-Chicago-heat-wave/).
 
