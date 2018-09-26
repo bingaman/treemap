@@ -38,24 +38,8 @@
  
   <div id='map'></div>
   <a href="#" id="save">Save</a>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoidGFjbzIwMDAiLCJhIjoiY2phbHZmMmE3MnhsdzMzcnpjcHJ0bWJvdyJ9.iLGmtX1I1bzmKJ7-tP5txw';
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/taco2000/cjm5af6ch5qbm2sley9s81utb',
-      center: [-87.688, 41.832],
-      zoom: 10
-    });
-    
-    var Draw = new MapboxDraw({
-      displayControlsDefault: false,
-      controls: {
-        point: true,
-        trash: true
-      }
-    });
-    map.addControl(Draw, 'top-left');
-  </script>
+  <script type="text/javascript" src="js/config.js">
+  <script type="text/javascript" src="js/chicago.js">
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
