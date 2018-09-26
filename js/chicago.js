@@ -42,8 +42,8 @@
 
         TREES.setData(features);
       });
-      
     }
+
     function addSourcesAndLayers() {
       TREES = new mapboxgl.GeoJSONSource({});
       map.addSource('selected-trees', TREES);
@@ -54,6 +54,8 @@
         'interactive': true,
         'paint': {
           'fill-color': 'rgba(189,0,0,77)',
-          'radius': '3px'
-        }, 'removed-trees'});
+          'radius': 3
+        } 
+      }, 'removed-trees');
+
     }
