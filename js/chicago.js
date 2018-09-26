@@ -45,17 +45,22 @@
     }
 
     function addSourcesAndLayers() {
-      TREES = new mapboxgl.GeoJSONSource({});
-      map.addSource('selected-trees', TREES);
+      //TREES = new mapboxgl.GeoJSONDataSource({});
+      map.addSource('removed-trees', {
+        'type': 'geojson'
+        'data': {
+          'type': 'FeatureCollection',
+          'features': test
+        }
+      });
       map.addLayer({
         'id': 'selected-trees',
         'type': 'circle',
         'source': 'removed-trees',
         'interactive': true,
         'paint': {
-          'fill-color': 'rgba(189,0,0,77)',
-          'radius': 3
+          'circle-color': 'rgba(189,0,0,77)',
+          'circle-  radius': 3
         } 
       }, 'removed-trees');
-
     }
