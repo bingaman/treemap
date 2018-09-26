@@ -19,6 +19,7 @@
     map.addControl(Draw, 'top-left');
 
     map.on('style.load', function (e) { 
+      addSourcesAndLayers();
       getDataSet();
     });
 
@@ -42,19 +43,17 @@
         TREES.setData(features);
       });
       
-      function addSourcesAndLayers() {
-        TREES = new mapboxgl.GeoJSONSource({});
-        map.addSource('selected-trees', TREES);
-        map.addLayer({
-          'id': 'selected-trees',
-          'type': 'circle',
-          'source': 'removed-trees',
-          'interactive': true,
-          'paint': {
-            'fill-color': 'rgba(189,0,0,77)',
-            'radius': '3px'
-          }, 'removed-trees');
-
-        });
-      }
+    }
+    function addSourcesAndLayers() {
+      TREES = new mapboxgl.GeoJSONSource({});
+      map.addSource('selected-trees', TREES);
+      map.addLayer({
+        'id': 'selected-trees',
+        'type': 'circle',
+        'source': 'removed-trees',
+        'interactive': true,
+        'paint': {
+          'fill-color': 'rgba(189,0,0,77)',
+          'radius': '3px'
+        }, 'removed-trees'});
     }
