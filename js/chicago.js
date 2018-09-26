@@ -28,13 +28,16 @@
       var params = {
         'access_token': DATASETS_ACCESS_TOKEN
       };
+
       $.get(url, params, function (data) {
         var features = {
             type: 'FeatureCollection'
         };
+
         data.features.forEach(function (feature) {
           feature.properties.id = feature.id;
         });
+
         features.features = data.features;
 
         var lastFeatureID = data.features[data.features.length - 1].id;
@@ -49,8 +52,7 @@
       map.addSource('removed-trees', {
         'type': 'geojson'
         'data': {
-          'type': 'FeatureCollection',
-          'features': test
+          'type': 'FeatureCollection'
         }
       });
       map.addLayer({
