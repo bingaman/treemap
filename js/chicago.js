@@ -1,5 +1,6 @@
     var TREES;
     mapboxgl.accessToken = PUBLIC_ACCESS_TOKEN;
+
     const map = new mapboxgl.Map({
       container: 'map',
       style: STYLESHEET,
@@ -14,9 +15,10 @@
         trash: true
       }
     });
+
     map.addControl(Draw, 'top-left');
 
-    map.on('style.load' function (e) { 
+    map.on('style.load', function (e) { 
       getDataSet();
     });
 
