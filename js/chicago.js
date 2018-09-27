@@ -44,18 +44,22 @@
         var lastFeatureID = data.features[data.features.length - 1].id;
         getDataSet(lastFeatureID);
 
-        TREES.setData(features);
+        console.log(features);
+
+        //TREES.setData(features);
       });
     }
 
     function addSourcesAndLayers() {
-      TREES = new mapboxgl.GeoJSONSource({});
+      //TREES = new mapboxgl.GeoJSONSource({});
       map.addSource('removed-trees', {
         'type': 'geojson',
         'data': {
-          'type': 'FeatureCollection'
+          'type': 'FeatureCollection',
+          'features': []
         }
       });
+
       map.addLayer({
         'id': 'selected-trees',
         'type': 'circle',
@@ -63,7 +67,7 @@
         'interactive': true,
         'paint': {
           'circle-color': 'rgba(189,0,0,77)',
-          'circle-  radius': 3
+          'circle-radius': 3
         } 
       }, 'removed-trees');
     }
