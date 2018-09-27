@@ -31,7 +31,8 @@
 
       $.get(url, params, function (data) {
         var features = {
-            type: 'FeatureCollection'
+            'type': 'FeatureCollection',
+            'features': []
         };
 
         data.features.forEach(function (feature) {
@@ -48,7 +49,7 @@
     }
 
     function addSourcesAndLayers() {
-      //TREES = new mapboxgl.GeoJSONDataSource({});
+      TREES = new mapboxgl.GeoJSONSource({});
       map.addSource('removed-trees', {
         'type': 'geojson',
         'data': {
