@@ -24,12 +24,35 @@
     });
 
     function getDataSet(startID) {
+
       var url = DATASETS_BASE + 'features';
       var params = {
         'access_token': DATASETS_ACCESS_TOKEN
       };
 
-      $.get(url, params, function (data) {
+      map.addSource('removed-trees', {
+        'type': 'geojson',
+        'url': url
+        /*'data': {
+          'type': 'FeatureCollection',
+          'features': []*/
+        }
+      });
+
+      map.addLayer({
+        'id': 'selected-trees',
+        'type': 'circle',
+        'source': 'removed-trees',
+        'interactive': true,
+        'paint': {
+          'circle-color': 'rgba(189,0,0,77)',
+          'circle-radius': 3
+        } 
+      }, 'removed-trees');
+
+      console.log(map);
+
+      /*$.get(url, params, function (data) {
         var features = {
             'type': 'FeatureCollection',
             'features': []
@@ -44,30 +67,12 @@
         var lastFeatureID = data.features[data.features.length - 1].id;
         getDataSet(lastFeatureID);
 
-        console.log(features);
+        //console.log(features);
 
         //TREES.setData(features);
-      });
+      });*/
     }
 
     function addSourcesAndLayers() {
       //TREES = new mapboxgl.GeoJSONSource({});
-      map.addSource('removed-trees', {
-        'type': 'geojson',
-        'data': {
-          'type': 'FeatureCollection',
-          'features': []
-        }
-      });
-
-      map.addLayer({
-        'id': 'selected-trees',
-        'type': 'circle',
-        'source': 'removed-trees',
-        'interactive': true,
-        'paint': {
-          'circle-color': 'rgba(189,0,0,77)',
-          'circle-radius': 3
-        } 
-      }, 'removed-trees');
     }
