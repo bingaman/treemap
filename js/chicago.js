@@ -50,7 +50,7 @@
     function addSourcesAndLayers() {
       //TREES = new mapboxgl.GeoJSONDataSource({});
       map.addSource('removed-trees', {
-        'type': 'geojson'
+        'type': 'geojson',
         'data': {
           'type': 'FeatureCollection'
         }
