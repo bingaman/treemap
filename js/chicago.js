@@ -25,7 +25,7 @@
 
     function getDataSet(startID) {
 
-      var url = DATASETS_BASE + 'features.json?access_token=' + DATASETS_ACCESS_TOKEN;
+      var url = DATASETS_BASE + 'features?access_token=' + DATASETS_ACCESS_TOKEN;
 
       var params = {
         'access_token': DATASETS_ACCESS_TOKEN
