@@ -1,5 +1,5 @@
 mapboxgl.accessToken = PUBLIC_ACCESS_TOKEN;
-var data = DATASETS_BASE + 'features?access_token=' + DATASETS_ACCESS_TOKEN;
+var data_url = DATASETS_BASE + 'features?access_token=' + DATASETS_ACCESS_TOKEN;
 
 const map = new mapboxgl.Map({
   container: 'map',
@@ -19,7 +19,7 @@ var Draw = new MapboxDraw({
 map.addControl(Draw, 'top-left');
 
 editorData=$.ajax({
-  url: url
+  url: data_url
 }).done(function(data) {
   map.on('style.load', function (e) { 
     console.log(url);
