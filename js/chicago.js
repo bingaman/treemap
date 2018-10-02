@@ -35,8 +35,8 @@
         'url': url
         /*'data': {
           'type': 'FeatureCollection',
-          'features': []*/
-        }
+          'features': []
+        }*/
       });
 
       map.addLayer({
