@@ -1,4 +1,3 @@
-    var TREES;
     mapboxgl.accessToken = PUBLIC_ACCESS_TOKEN;
 
     const map = new mapboxgl.Map({
@@ -18,23 +17,15 @@
 
     map.addControl(Draw, 'top-left');
 
-    map.on('style.load', function (e) { 
-      addSourcesAndLayers();
-      getDataSet();
-    });
-
-    function getDataSet(startID) {
-
-      var url = DATASETS_BASE + 'features?access_token=' + DATASETS_ACCESS_TOKEN;
-
-      var params = {
-        'access_token': DATASETS_ACCESS_TOKEN
-      };
-
+    var url = DATASETS_BASE + 'features?access_token=' + DATASETS_ACCESS_TOKEN;
+    editorData=$.ajax({
+        url: url
+    }).done(function(data){
+      map.on('style.load', function (e) { 
       console.log(url);
       map.addSource('removed-trees', {
         'type': 'geojson',
-        'url': url
+        'data': data
         /*'data': {
           'type': 'FeatureCollection',
           'features': []
@@ -52,7 +43,9 @@
         } 
       }, 'removed-trees');
 
-      console.log(map);
+    });
+
+    function getDataSet(startID) {
 
       /*$.get(url, params, function (data) {
         var features = {
