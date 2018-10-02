@@ -26,10 +26,12 @@
     function getDataSet(startID) {
 
       var url = DATASETS_BASE + 'features';
+
       var params = {
         'access_token': DATASETS_ACCESS_TOKEN
       };
 
+      console.log(url);
       map.addSource('removed-trees', {
         'type': 'geojson',
         'url': url
